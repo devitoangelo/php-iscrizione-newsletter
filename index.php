@@ -29,15 +29,6 @@ if (isset($_GET["email"])) {
 
 
 
-
-    // if (strlen($email) > 3 && str_contains($email, '@') && str_contains($email, ".")) {
-    //     $message = "ok";
-    // } else {
-    //     $message = "fail";
-    // }
-
-
-
     $message = checkEmail($email);
 }
 
@@ -46,10 +37,20 @@ function checkEmail($email)
 
 
     if (strlen($email) > 3 && str_contains($email, '@') && str_contains($email, ".")) {
-        return "succes";
-    } else {
-        return "error";
-    }
+        return [
+            'status' => 'bg-success',
+            'text' => 'Success! your are subscribe',
+
+
+        ];
+    } 
+        return [
+
+            'status'=> 'bg-danger',
+            'text'=> 'Error! your email is incorrect.',
+
+        ];
+    
 }
 
 
@@ -106,8 +107,8 @@ function checkEmail($email)
 
         <?php if (isset($message)) : ?>
 
-            <div class="alert alert-primary" role="alert">
-                <strong> <?= $message ?> </strong>
+            <div class="alert alert-primary <?= $message['status']  ?> " role="alert">
+                <strong> <?= $message['text'] ?> </strong>
             </div>
 
 
