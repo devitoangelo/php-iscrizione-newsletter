@@ -1,22 +1,27 @@
 <?php
-require_once __DIR__ . '/helpers/functions.php';
+// require_once __DIR__ . '/helpers/functions.php';
 
-// var_dump($_GET);
-// var_dump(isset($_GET['email']));
+// // var_dump($_GET);
+// // var_dump(isset($_GET['email']));
 
 
-$email = $_GET['email'];
+// $email = $_GET['email'];
 
-if (isset($_GET["email"])) {
+// if (isset($_GET["email"])) {
 
-    // $message = checkEmail($email);
-    $response = checkEmail($email);
+//     // $message = checkEmail($email);
+//     $response = checkEmail($email);
 
-    $message = generateAlerttMessage($response);
+//     $message = generateAlerttMessage($response);
+// }
+
+session_start();
+// var_dump($_SESSION);
+
+if (isset($_SESSION['message'])) {
+
+    $message = $_SESSION['message'];
 }
-
-
-
 
 include_once __DIR__ . '/layouts/head.php';
 
@@ -158,7 +163,7 @@ include_once __DIR__ . '/layouts/head.php';
 
 
             <!-- form -->
-            <form action="" method="get" class="d-flex justify-content-center align-items-center">
+            <form action="server.php" method="get" class="d-flex justify-content-center align-items-center">
                 <div class="">
                     <label for="email" class="form-label">Email</label>
                     <input type="text" class="form-control rounded-0" name="email" id="email" aria-describedby="emailHelper" placeholder="" />
