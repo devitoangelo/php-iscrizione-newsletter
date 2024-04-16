@@ -9,13 +9,8 @@ $email = $_GET['email'];
 
 if (isset($_GET["email"])) {
 
-
-
-    $message = checkEmail($email);
-
-
+    // $message = checkEmail($email);
     $response = checkEmail($email);
-
 
     $message = generateAlerttMessage($response);
 }
