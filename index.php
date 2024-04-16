@@ -16,6 +16,30 @@ Bonus
 
  */
 
+
+
+
+var_dump($_GET);
+var_dump(isset($_GET['email']));
+
+
+$email = $_GET['email'];
+
+if (isset($_GET["email"])) {
+
+
+
+
+    if (strlen($email) > 3 && str_contains($email, '@') && str_contains($email, ".")) {
+        $message = "ok";
+    } else {
+        $message = "fail";
+    }
+}
+
+
+
+
 ?>
 
 
@@ -65,11 +89,25 @@ Bonus
 
 
     <main>
+
+        <?php if (isset($message)) : ?>
+
+            <div class="alert alert-primary" role="alert">
+                <strong> <?= $message ?> </strong>
+            </div>
+
+
+        <?php endif; ?>
+
+
+
+
+
         <div class="p-5 mb-4 bg-light rounded-3">
             <div class="container-fluid py-5">
                 <h1 class="display-5 fw-bold">Welcome to my site </h1>
                 <p class="col-md-8 fs-4">
-                    lorem ipsum dolor
+                    Lorem ipsum dolor
 
                 </p>
                 <button class="btn btn-primary btn-lg" type="button">
@@ -84,7 +122,7 @@ Bonus
                     <div class="col">
                         <div class="card">
 
-                            <img class="card-img-top" src="'https://picsum.photos/400/200" alt="Title" />
+                            <img class="card-img-top" src="https://picsum.photos/400/200" alt="Title" />
                             <div class="card-body">
                                 <h4 class="card-title">Title</h4>
                                 <p class="card-text">Text</p>
@@ -96,7 +134,7 @@ Bonus
                     <div class="col">
                         <div class="card">
 
-                            <img class="card-img-top" src="'https://picsum.photos/400/200" alt="Title" />
+                            <img class="card-img-top" src="https://picsum.photos/400/200" alt="Title" />
                             <div class="card-body">
                                 <h4 class="card-title">Title</h4>
                                 <p class="card-text">Text</p>
@@ -107,7 +145,7 @@ Bonus
                     </div>
                     <div class="col">
                         <div class="card">
-                            <img class="card-img-top" src="'https://picsum.photos/400/200" alt="Title" />
+                            <img class="card-img-top" src="https://picsum.photos/400/200" alt="Title" />
                             <div class="card-body">
                                 <h4 class="card-title">Title</h4>
                                 <p class="card-text">Text</p>
@@ -116,7 +154,7 @@ Bonus
                     </div>
                     <div class="col">
                         <div class="card">
-                            <img class="card-img-top" src="'https://picsum.photos/400/200" alt="Title" />
+                            <img class="card-img-top" src="https://picsum.photos/400/200" alt="Title" />
                             <div class="card-body">
                                 <h4 class="card-title">Title</h4>
                                 <p class="card-text">Text</p>
@@ -125,7 +163,7 @@ Bonus
                     </div>
                     <div class="col">
                         <div class="card">
-                            <img class="card-img-top" src="'https://picsum.photos/400/200" alt="Title" />
+                            <img class="card-img-top" src="https://picsum.photos/400/200" alt="Title" />
                             <div class="card-body">
                                 <h4 class="card-title">Title</h4>
                                 <p class="card-text">Text</p>
@@ -134,7 +172,7 @@ Bonus
                     </div>
                     <div class="col">
                         <div class="card">
-                            <img class="card-img-top" src="'https://picsum.photos/400/200" alt="Title" />
+                            <img class="card-img-top" src="https://picsum.photos/400/200" alt="Title" />
                             <div class="card-body">
                                 <h4 class="card-title">Title</h4>
                                 <p class="card-text">Text</p>
@@ -144,7 +182,7 @@ Bonus
                     <div class="col">
                         <div class="card">
 
-                            <img class="card-img-top" src="'https://picsum.photos/400/200" alt="Title" />
+                            <img class="card-img-top" src="https://picsum.photos/400/200" alt="Title" />
                             <div class="card-body">
                                 <h4 class="card-title">Title</h4>
                                 <p class="card-text">Text</p>
@@ -153,7 +191,7 @@ Bonus
                     </div>
                     <div class="col">
                         <div class="card">
-                            <img class="card-img-top" src="'https://picsum.photos/400/200" alt="Title" />
+                            <img class="card-img-top" src="https://picsum.photos/400/200" alt="Title" />
                             <div class="card-body">
                                 <h4 class="card-title">Title</h4>
                                 <p class="card-text">Text</p>
@@ -181,12 +219,7 @@ Bonus
                         <small id="emailhelper" class="form-text text-muted"> type your emial address</small>
                     </div>
 
-
                     <button type="submit" class="btn btn-dark rounded-0 w-0"> Subscribe</button>
-
-
-
-
 
                 </form>
 
