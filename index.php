@@ -59,6 +59,9 @@ if (isset($_GET["email"])) {
                         <li class="nav-item">
                             <a class="nav-link" href="/php/php-iscrizione-newsletter/php-iscrizione-newsletter/about.php">About</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/php/php-iscrizione-newsletter/php-iscrizione-newsletter/Contacts.php">Contacts</a>
+                        </li>
                     </ul>
 
                 </div>
