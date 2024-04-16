@@ -19,8 +19,8 @@ Bonus
 
 
 
-var_dump($_GET);
-var_dump(isset($_GET['email']));
+// var_dump($_GET);
+// var_dump(isset($_GET['email']));
 
 
 $email = $_GET['email'];
@@ -30,6 +30,33 @@ if (isset($_GET["email"])) {
 
 
     $message = checkEmail($email);
+
+
+    $response = checkEmail($email);
+
+
+    $message = generateAlerttMessage($response);
+}
+
+
+
+function generateAlerttMessage($response)
+{
+
+    if ($response) {
+
+        return   [
+            'status' => 'bg-success',
+            'text' => 'Success! your are subscribe',
+
+
+
+        ];
+    }
+    return [
+        'status' => 'bg-danger',
+        'text' => 'Error! your email is incorrect.',
+    ];
 }
 
 function checkEmail($email)
@@ -37,20 +64,25 @@ function checkEmail($email)
 
 
     if (strlen($email) > 3 && str_contains($email, '@') && str_contains($email, ".")) {
-        return [
-            'status' => 'bg-success',
-            'text' => 'Success! your are subscribe',
+
+        return true;
 
 
-        ];
-    } 
-        return [
+        // return [
+        //     'status' => 'bg-success',
+        //     
 
-            'status'=> 'bg-danger',
-            'text'=> 'Error! your email is incorrect.',
 
-        ];
-    
+        // ];
+    }
+    return false;
+    // return [
+
+    //     'status'=> 'bg-danger',
+    //     'text'=> 'Error! your email is incorrect.',
+
+    // ];
+
 }
 
 
@@ -105,6 +137,7 @@ function checkEmail($email)
 
     <main>
 
+        <!-- alert  -->
         <?php if (isset($message)) : ?>
 
             <div class="alert alert-primary <?= $message['status']  ?> " role="alert">
