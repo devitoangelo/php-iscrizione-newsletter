@@ -30,13 +30,27 @@ if (isset($_GET["email"])) {
 
 
 
-    if (strlen($email) > 3 && str_contains($email, '@') && str_contains($email, ".")) {
-        $message = "ok";
-    } else {
-        $message = "fail";
-    }
+    // if (strlen($email) > 3 && str_contains($email, '@') && str_contains($email, ".")) {
+    //     $message = "ok";
+    // } else {
+    //     $message = "fail";
+    // }
+
+
+
+    $message = checkEmail($email);
 }
 
+function checkEmail($email)
+{
+
+
+    if (strlen($email) > 3 && str_contains($email, '@') && str_contains($email, ".")) {
+        return "succes";
+    } else {
+        return "error";
+    }
+}
 
 
 
@@ -212,6 +226,8 @@ if (isset($_GET["email"])) {
                     </p>
                 </div>
 
+
+                <!-- form -->
                 <form action="" method="get" class="d-flex justify-content-center align-items-center">
                     <div class="">
                         <label for="email" class="form-label">Email</label>
@@ -233,7 +249,7 @@ if (isset($_GET["email"])) {
 
 
 
-
+    <!-- footer -->
 
 
     <footer class="pv-4 bg-dark text-white">
