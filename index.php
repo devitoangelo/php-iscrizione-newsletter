@@ -57,9 +57,8 @@ if (isset($_GET["email"])) {
                                 <span class="visually-hidden">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/">About</a>
+                            <a class="nav-link" href="/php/php-iscrizione-newsletter/php-iscrizione-newsletter/about.php">About</a>
                         </li>
-
                     </ul>
 
                 </div>
