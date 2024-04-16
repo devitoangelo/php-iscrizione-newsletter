@@ -8,6 +8,7 @@ Andante per gradi  e seguite con ordine le milestone di seguito:
  - Milestone 1: scriviamo tutto (logica e layout) in un unico file index.php
  - Milestone 2: verificato il corretto funzionamento del nostro codice, spostiamo la logica in un file functions.php che includeremo poi nella pagina principale
   Aggiungere anche un po’ di stile alla pagina tramite Bootstrap.
+
 Bonus
  - Milestone 3: invece di usare una classe statica per lo stile dell’alert,         modificarla in base all’esito della funzione. Usare alert-danger in caso di errore e alert-success in caso di esito positivo.
  - Milestone 4: invece di visualizzare il messaggio di success nella index.php, in caso di esito positivo effettuare un redirect ad una thankyou page.
@@ -40,50 +41,6 @@ if (isset($_GET["email"])) {
 
 
 
-function generateAlerttMessage($response)
-{
-
-    if ($response) {
-
-        return   [
-            'status' => 'bg-success',
-            'text' => 'Success! your are subscribe',
-
-
-
-        ];
-    }
-    return [
-        'status' => 'bg-danger',
-        'text' => 'Error! your email is incorrect.',
-    ];
-}
-
-function checkEmail($email)
-{
-
-
-    if (strlen($email) > 3 && str_contains($email, '@') && str_contains($email, ".")) {
-
-        return true;
-
-
-        // return [
-        //     'status' => 'bg-success',
-        //     
-
-
-        // ];
-    }
-    return false;
-    // return [
-
-    //     'status'=> 'bg-danger',
-    //     'text'=> 'Error! your email is incorrect.',
-
-    // ];
-
-}
 
 
 
